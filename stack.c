@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include "stack.h"
 
-void stack_init(Stack * s, int size) {
+void stack_resize(Stack *s, size_t size); /* internal use only */
+
+void stack_init(Stack * s, unsigned long size) {
 	s->size = 0;
 	s->maxSize = size;
 	s->array = malloc(sizeof(_TYPE_) * size);
@@ -20,14 +22,14 @@ _TYPE_ stack_pop(Stack *s) {
 	return retval;
 }
 
-void stack_push(Stack *s, _TYPE_ i) {
+void stack_push(Stack *s, _TYPE_ val) {
 	if (s->size == s->maxSize)
 		stack_resize(s, s->maxSize * 2);
-	s->array[s->size] = i;
+	s->array[s->size] = val;
 	s->size++;
 }
 
-void stack_resize(Stack *s, int size) {
+void stack_resize(Stack *s, size_t size) {
 	_TYPE_ *temp = realloc(s->array, sizeof(_TYPE_) * size);
 	if (!temp) {
 		fprintf(stderr, "Error: memory allocation failure\n");
