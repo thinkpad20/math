@@ -2,7 +2,7 @@ Here I plan to put some projects which may not be useful, per se, but implement 
 
 The code can be compiled by an ANSI-compatible C compiler (C89 standard). On unix this might mean
 
-`> cc -o euclid euclid.c`
+`> cc -o euclid euclid.c stack.c`
 
 Subsequently it can be run by passing in two positive integer arguments:
 
@@ -34,3 +34,5 @@ Expressing 1 as a linear combination of 97135 and 45293:
 1 = 12435 * 6549 - 1798 * 45293
 1 = 12435 * 97135 - 26668 * 45293
 ```
+
+There's also a very simple array-based stack implementation there which may be of interest. It employs a very simplistic form of genericism, being parameterized by redefining the `_TYPE_` macro.
