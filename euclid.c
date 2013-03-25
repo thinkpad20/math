@@ -73,6 +73,13 @@ void print_array(int* array, size_t len) {
 int euclids_algorithm(int a, int b) {
 	/* Set up n = q*m + r */
 	int left, right_q, right_m, right_r, coeffs[2];
+
+	if (a <= 0 || b <= 0) {
+		printf("Error: both inputs must be positive.\n");
+		exit(1);
+	}
+
+
 	/* Create vector to store each n, q, m and r in */
 	Vector *s;
 	s = malloc(sizeof(Vector));
