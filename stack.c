@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "stack.h"
 
-void stack_init(Stack * s, _TYPE_ size) {
+void stack_init(Stack * s, int size) {
 	s->size = 0;
 	s->maxSize = size;
 	s->array = malloc(sizeof(_TYPE_) * size);
@@ -36,17 +36,3 @@ void stack_resize(Stack *s, int size) {
 	s->array = temp;
 	s->maxSize = size;
 }
-/*
-int main() {
-	Stack s;
-	char alpha[26] = "abcdefghijklmnopqrstuvwxyz";
-	stack_init(&s, 2);
-	for (int i = 0; i < 20; ++i) {
-		if (i < 10) {
-			stack_push(&s, alpha[i]);
-			printf("last element %c, size %d, maxSize %d\n", s.array[s.size-1], s.size, s.maxSize);
-		} else {
-			printf("popped off %c\n", stack_pop(&s));
-		}
-	}
-}*/
