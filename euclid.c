@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "intstack.h"
+#include "stack.h"
 
 int euclidsAlgorithm(int a, int b);
 /* Computes gcd(a,b) */
@@ -94,8 +94,7 @@ int euclidsAlgorithm(int a, int b) {
 	printf("gcd(%d, %d) = %d\n", a, b, right_m);
 	euclidLinearCombo(s, a, b, right_m, coeffs);
 
-	free(s->array);
-	free(s);
+	stack_delete(s);
 	return right_m;
 }
 

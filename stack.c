@@ -38,3 +38,8 @@ void stack_resize(Stack *s, size_t size) {
 	s->array = temp;
 	s->maxSize = size;
 }
+
+void stack_delete(Stack *s) {
+	free(s->array);
+	free(s);
+}

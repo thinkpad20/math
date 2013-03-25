@@ -11,6 +11,7 @@ typedef struct {
 
 void stack_init(Stack *s, unsigned long size); /* run this before any operations */
 _TYPE_ stack_pop(Stack *s);
-void stack_push(Stack *, _TYPE_ val);
+void stack_push(Stack *s, _TYPE_ val);
+void stack_delete(Stack *s);
 
 #endif
