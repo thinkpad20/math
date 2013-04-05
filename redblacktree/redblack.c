@@ -34,7 +34,7 @@ RedBlackTree *RBT_new(int (*cmp)(void *, void *), void (*del)(void *)) {
 RBTNode *RBT_newNode(void *data, RBTNode *parent) {
   RBTNode *newRBTNode = malloc(sizeof(RBTNode));
   if (newRBTNode) {
-    newRBTNode->red = false;
+    newRBTNode->red = true;
     newRBTNode->data = data;
     newRBTNode->parent = parent;
     newRBTNode->left = newRBT->right = NULL;
